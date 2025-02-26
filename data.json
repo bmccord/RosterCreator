@@ -780,7 +780,9 @@
                 "Announcements",
                 "Scripture Reading",
                 "Communion Prayers"
-            ]
+            ],
+            "sundayPM": false,
+            "wednesdayPM": false
         }
     ]
 }

@@ -39,11 +39,12 @@ List<Service> services = data.Services.Select(s => new Service(
 
 List<Person> people = data.People.Select(p => new Person(
     p.Name,
-    p.Duties.Select(d => duties.First(duty => duty.Name == d)).ToList())
-{
-    SundayPM = p.SundayPM,
-    WednesdayPM = p.WednesdayPM
-}).ToList();
+    p.Duties.Select(d => duties.First(duty => duty.Name == d)).ToList(),
+    p.SundayAM,
+    p.SundayPM,
+    p.WednesdayPM
+)).ToList();
+
 
 // Create roster for all services
 var weeklyAssignments = new Dictionary<string, Dictionary<Duty, Person>>();
@@ -103,7 +104,9 @@ public class PersonData
 {
     public string Name { get; set; }
     public List<string> Duties { get; set; }
+    public bool SundayAM { get; set; } = true;
     public bool SundayPM { get; set; } = true;
     public bool WednesdayPM { get; set; } = true;
+
 }
 
