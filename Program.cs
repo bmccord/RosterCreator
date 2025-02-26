@@ -3,70 +3,78 @@
 using System.Globalization;
 using System.Text.Json;
 using System.IO;
+using Fclp;
 
-// Load data from JSON file
-var jsonData = File.ReadAllText("data.json");
-var options = new JsonSerializerOptions
+public class RosterCreator
 {
-    PropertyNameCaseInsensitive = true
-};
+    private Data data;
+    private List<Duty> duties;
+    private List<Service> services;
+    private List<Person> people;
 
-Data data;
-try
-{
-    data = JsonSerializer.Deserialize<Data>(jsonData, options) ?? throw new InvalidOperationException("Deserialized data is null");
-}
-catch (JsonException ex)
-{
-    Console.WriteLine($"Error deserializing JSON data: {ex.Message}");
-    return;
-}
-
-// Check if any properties in data are null
-if (data.Duties == null || data.Services == null || data.People == null)
-{
-    Console.WriteLine("Error: One or more properties in the deserialized data are null.");
-    return;
-}
-
-var duties = data.Duties.Select(d => new Duty(d.Name, d.Importance, d.Weekly, d.Rotation)).ToList();
-
-List<Service> services = data.Services.Select(s => new Service(
-    s.Name,
-    s.Duties.Select(sd => new ServiceDuty(duties.First(d => d.Name == sd.Name), sd.PrintOrder)).ToList(),
-    DateTime.Parse(s.ServiceTime)
-)).ToList();
-
-List<Person> people = data.People.Select(p => new Person(
-    p.Name,
-    p.Duties.Select(d => duties.First(duty => duty.Name == d)).ToList(),
-    p.SundayAM,
-    p.SundayPM,
-    p.WednesdayPM
-)).ToList();
-
-
-// Create roster for all services
-var weeklyAssignments = new Dictionary<string, Dictionary<Duty, Person>>();
-using (StreamWriter writer = new StreamWriter("output.txt"))
-{
-    foreach (var service in services)
+    public RosterCreator(string jsonFilePath)
     {
-        var weekKey = $"{service.ServiceTime.Year}-W{CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(service.ServiceTime, CalendarWeekRule.FirstDay, DayOfWeek.Sunday)}";
-        if (!weeklyAssignments.ContainsKey(weekKey))
+        var jsonData = File.ReadAllText(jsonFilePath);
+        var options = new JsonSerializerOptions
         {
-            weeklyAssignments[weekKey] = new Dictionary<Duty, Person>();
+            PropertyNameCaseInsensitive = true
+        };
+
+        try
+        {
+            data = JsonSerializer.Deserialize<Data>(jsonData, options) ?? throw new InvalidOperationException("Deserialized data is null");
         }
-        service.CreateRoster(people, weeklyAssignments[weekKey]);
-        string serviceInfo = $"Roster for service: {service.Name} on {service.ServiceTime:MMMM dd, yyyy 'at' hh:mm tt}";
-        writer.WriteLine(serviceInfo);
-        Console.WriteLine(serviceInfo);
-        foreach (var assignment in service.Roster.DutyAssignments.OrderBy(a => service.ServiceDuties.First(sd => sd.Duty == a.Key).PrintOrder))
+        catch (JsonException ex)
         {
-            var personName = assignment.Value != null ? assignment.Value.Name : "No person assigned";
-            string dutyInfo = $"- {assignment.Key.Name}: {personName}";
-            writer.WriteLine(dutyInfo);
-            Console.WriteLine(dutyInfo);
+            Console.WriteLine($"Error deserializing JSON data: {ex.Message}");
+            throw;
+        }
+
+        if (data.Duties == null || data.Services == null || data.People == null)
+        {
+            Console.WriteLine("Error: One or more properties in the deserialized data are null.");
+            throw new InvalidOperationException("Invalid data");
+        }
+
+        duties = data.Duties.Select(d => new Duty(d.Name, d.Importance, d.Weekly, d.Rotation)).ToList();
+        services = data.Services.Select(s => new Service(
+            s.Name,
+            s.Duties.Select(sd => new ServiceDuty(duties.First(d => d.Name == sd.Name), sd.PrintOrder)).ToList(),
+            DateTime.Parse(s.ServiceTime)
+        )).ToList();
+        people = data.People.Select(p => new Person(
+            p.Name,
+            p.Duties.Select(d => duties.First(duty => duty.Name == d)).ToList(),
+            p.SundayAM,
+            p.SundayPM,
+            p.WednesdayPM
+        )).ToList();
+    }
+
+    public void CreateRoster(string outputFilePath)
+    {
+        var weeklyAssignments = new Dictionary<string, Dictionary<Duty, Person>>();
+        using (StreamWriter writer = new StreamWriter(outputFilePath))
+        {
+            foreach (var service in services)
+            {
+                var weekKey = $"{service.ServiceTime.Year}-W{CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(service.ServiceTime, CalendarWeekRule.FirstDay, DayOfWeek.Sunday)}";
+                if (!weeklyAssignments.ContainsKey(weekKey))
+                {
+                    weeklyAssignments[weekKey] = new Dictionary<Duty, Person>();
+                }
+                service.CreateRoster(people, weeklyAssignments[weekKey]);
+                string serviceInfo = $"Roster for service: {service.Name} on {service.ServiceTime:MMMM dd, yyyy 'at' hh:mm tt}";
+                writer.WriteLine(serviceInfo);
+                Console.WriteLine(serviceInfo);
+                foreach (var assignment in service.Roster.DutyAssignments.OrderBy(a => service.ServiceDuties.First(sd => sd.Duty == a.Key).PrintOrder))
+                {
+                    var personName = assignment.Value != null ? assignment.Value.Name : "No person assigned";
+                    string dutyInfo = $"- {assignment.Key.Name}: {personName}";
+                    writer.WriteLine(dutyInfo);
+                    Console.WriteLine(dutyInfo);
+                }
+            }
         }
     }
 }
@@ -107,6 +115,51 @@ public class PersonData
     public bool SundayAM { get; set; } = true;
     public bool SundayPM { get; set; } = true;
     public bool WednesdayPM { get; set; } = true;
+}
 
+public class ApplicationArguments
+{
+    public string InputFilePath { get; set; }
+    public string OutputFilePath { get; set; }
+}
+
+// Main method to run the program
+public static class Program
+{
+    public static void Main(string[] args)
+    {
+
+        var p = new FluentCommandLineParser<ApplicationArguments>();
+
+        // specify which property the value will be assigned too.
+        p.Setup(arg => arg.InputFilePath)
+         .As('i', "input") // define the short and long option name
+         .SetDefault("data.json")
+         .WithDescription("Path to the input data file. (Default: data.json)");
+
+        p.Setup(arg => arg.OutputFilePath)
+         .As('o', "output")
+         .SetDefault("output.txt")
+         .WithDescription("Path to the output file. (Default: output.txt)");
+
+        p.SetupHelp("?", "help")
+         .Callback(text => Console.WriteLine(text));
+
+        var result = p.Parse(args);
+
+        if (result.HasErrors == false  && !result.HelpCalled)
+        {
+            try
+            {
+                var rosterCreator = new RosterCreator(p.Object.InputFilePath);
+                rosterCreator.CreateRoster(p.Object.OutputFilePath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+
+        }
+    }
 }
 
