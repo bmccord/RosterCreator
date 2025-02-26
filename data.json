@@ -629,7 +629,7 @@
     ],
     "people": [
         {
-            "name": "Brian McCord",
+            "name": "John Doe",
             "duties": [
                 "Song Leading",
                 "Opening Prayer",
@@ -645,7 +645,7 @@
             ]
         },
         {
-            "name": "Eric Woodrum",
+            "name": "Jim Parsons",
             "duties": [
                 "Song Leading",
                 "Opening Prayer",
@@ -663,7 +663,7 @@
             ]
         },
         {
-            "name": "Richard Allen",
+            "name": "Kevin Costner",
             "duties": [
                 "Opening Prayer",
                 "Usher",
@@ -678,7 +678,7 @@
             ]
         },
         {
-            "name": "Ryan Edde",
+            "name": "Greg Gutfeld",
             "duties": [
                 "Opening Prayer",
                 "Usher",
@@ -692,7 +692,7 @@
             ]
         },
         {
-            "name": "Ryan Engdahl",
+            "name": "Garth Brooks",
             "duties": [
                 "Scripture Reading",
                 "Communion Server 1",
@@ -702,7 +702,7 @@
             ]
         },
         {
-            "name": "Rick Tomlin",
+            "name": "Patrick Stewarts",
             "duties": [
                 "Opening Prayer",
                 "Usher",
@@ -717,7 +717,7 @@
             ]
         },
         {
-            "name": "Austin Meek",
+            "name": "Ryan Reynolds",
             "duties": [
                 "Song Leading",
                 "Scripture Reading",
@@ -726,14 +726,14 @@
             ]
         },
         {
-            "name": "Seth Woodrum",
+            "name": "Burt Reynolds",
             "duties": [
                 "Communion Server 1",
                 "Communion Server 2"
             ]
         },
         {
-            "name": "Mark Kidwell",
+            "name": "Peter Dinklage",
             "duties": [
                 "Song Leading",
                 "Opening Prayer",
@@ -749,7 +749,7 @@
             ]
         },
         {
-            "name": "Charles Hayes",
+            "name": "Darrel Dixon",
             "duties": [
                 "Scripture Reading",
                 "Communion Server 1",
@@ -759,7 +759,7 @@
             "wednesdayPM": false
         },
         {
-            "name": "Clarence David",
+            "name": "Santa Claus",
             "duties": [
                 "Communion Server 1",
                 "Communion Server 2",
@@ -769,7 +769,7 @@
             "wednesdayPM": false
         },
         {
-            "name": "Daryl McMurtry",
+            "name": "Jessie Watters",
             "duties": [
                 "Opening Prayer",
                 "Communion Thoughts / Bread Prayer",
