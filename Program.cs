@@ -5,6 +5,49 @@ using System.Text.Json;
 using System.IO;
 using Fclp;
 
+// Main method to run the program
+public static class Program
+{
+    public static void Main(string[] args)
+    {
+        var p = new FluentCommandLineParser<ApplicationArguments>();
+
+        // specify which property the value will be assigned too.
+        p.Setup(arg => arg.InputFilePath)
+         .As('i', "input") // define the short and long option name
+         .SetDefault("data.json")
+         .WithDescription("Path to the input data file. (Default: data.json)");
+
+        p.Setup(arg => arg.OutputFilePath)
+         .As('o', "output")
+         .SetDefault("output.txt")
+         .WithDescription("Path to the output file. (Default: output.txt)");
+
+        p.Setup(arg => arg.Silent)
+         .As('s', "silent")
+         .SetDefault(false)
+         .WithDescription("Do not output roster to console.");
+
+        p.SetupHelp("?", "help")
+         .Callback(text => Console.WriteLine(text));
+
+        var result = p.Parse(args);
+
+        if (result.HasErrors == false && !result.HelpCalled)
+        {
+            try
+            {
+                var rosterCreator = new RosterCreator(p.Object.InputFilePath);
+                rosterCreator.CreateRoster(p.Object.OutputFilePath, p.Object.Silent);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
+    }
+}
+
 public class RosterCreator
 {
     private Data data;
@@ -51,7 +94,7 @@ public class RosterCreator
         )).ToList();
     }
 
-    public void CreateRoster(string outputFilePath)
+    public void CreateRoster(string outputFilePath, bool silent = false)
     {
         var weeklyAssignments = new Dictionary<string, Dictionary<Duty, Person>>();
         using (StreamWriter writer = new StreamWriter(outputFilePath))
@@ -66,13 +109,19 @@ public class RosterCreator
                 service.CreateRoster(people, weeklyAssignments[weekKey]);
                 string serviceInfo = $"Roster for service: {service.Name} on {service.ServiceTime:MMMM dd, yyyy 'at' hh:mm tt}";
                 writer.WriteLine(serviceInfo);
-                Console.WriteLine(serviceInfo);
+                if (!silent)
+                {
+                    Console.WriteLine(serviceInfo);
+                }
                 foreach (var assignment in service.Roster.DutyAssignments.OrderBy(a => service.ServiceDuties.First(sd => sd.Duty == a.Key).PrintOrder))
                 {
                     var personName = assignment.Value != null ? assignment.Value.Name : "No person assigned";
                     string dutyInfo = $"- {assignment.Key.Name}: {personName}";
                     writer.WriteLine(dutyInfo);
-                    Console.WriteLine(dutyInfo);
+                    if (!silent)
+                    {
+                        Console.WriteLine(dutyInfo);
+                    }
                 }
             }
         }
@@ -121,45 +170,6 @@ public class ApplicationArguments
 {
     public string InputFilePath { get; set; }
     public string OutputFilePath { get; set; }
-}
-
-// Main method to run the program
-public static class Program
-{
-    public static void Main(string[] args)
-    {
-
-        var p = new FluentCommandLineParser<ApplicationArguments>();
-
-        // specify which property the value will be assigned too.
-        p.Setup(arg => arg.InputFilePath)
-         .As('i', "input") // define the short and long option name
-         .SetDefault("data.json")
-         .WithDescription("Path to the input data file. (Default: data.json)");
-
-        p.Setup(arg => arg.OutputFilePath)
-         .As('o', "output")
-         .SetDefault("output.txt")
-         .WithDescription("Path to the output file. (Default: output.txt)");
-
-        p.SetupHelp("?", "help")
-         .Callback(text => Console.WriteLine(text));
-
-        var result = p.Parse(args);
-
-        if (result.HasErrors == false  && !result.HelpCalled)
-        {
-            try
-            {
-                var rosterCreator = new RosterCreator(p.Object.InputFilePath);
-                rosterCreator.CreateRoster(p.Object.OutputFilePath);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-            }
-
-        }
-    }
+    public bool Silent { get; set; }
 }
 
