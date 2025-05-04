@@ -54,6 +54,7 @@ public class RosterCreator
     private List<Duty> duties;
     private List<Service> services;
     private List<Person> people;
+    private List<Template> templates;
 
     public RosterCreator(string jsonFilePath)
     {
@@ -80,11 +81,24 @@ public class RosterCreator
         }
 
         duties = data.Duties.Select(d => new Duty(d.Name, d.Importance, d.Weekly, d.Rotation)).ToList();
-        services = data.Services.Select(s => new Service(
-            s.Name,
-            s.Duties.Select(sd => new ServiceDuty(duties.First(d => d.Name == sd.Name), sd.PrintOrder)).ToList(),
-            DateTime.Parse(s.ServiceTime)
-        )).ToList();
+        templates = data.Templates.Select(t=> new Template(t.Name, t.Duties.Select(d=> new TemplateDuty(duties.First(f=>f.Name == d.Name), d.PrintOrder)).ToList())).ToList(); // Load templates
+        
+        services = data.Services.Select(service =>
+        {
+            var template = templates.First(f=>f.Name == service.Template);
+            return new Service(
+                service.Name ?? template.Name,
+                template.TemplateDuties.Select(d => new ServiceDuty(d.Duty, d.PrintOrder)).ToList(),
+                DateTime.Parse(service.ServiceTime)
+            );
+        }).ToList();
+        
+        // services = data.Services.Select(s => new Service(
+        //     s.Name,
+        //     s.Duties.Select(sd => new ServiceDuty(duties.First(d => d.Name == sd.Name), sd.PrintOrder)).ToList(),
+        //     DateTime.Parse(s.ServiceTime)
+        // )).ToList();
+        
         people = data.People.Select(p => new Person(
             p.Name,
             p.Duties.Select(d => duties.First(duty => duty.Name == d)).ToList(),
@@ -131,6 +145,7 @@ public class RosterCreator
 public class Data
 {
     public List<DutyData> Duties { get; set; }
+    public List<TemplateData> Templates { get; set; }
     public List<ServiceData> Services { get; set; }
     public List<PersonData> People { get; set; }
 }
@@ -144,11 +159,23 @@ public class DutyData
     // Removed MayReuse property
 }
 
+public class TemplateData
+{
+    public string Name { get; set; }
+    public List<TemplateDutyData> Duties { get; set; }
+}
+
 public class ServiceData
 {
     public string Name { get; set; }
-    public List<ServiceDutyData> Duties { get; set; }
+    public string Template { get; set; }
     public string ServiceTime { get; set; }
+}
+
+public class TemplateDutyData
+{
+    public string Name { get; set; }
+    public int PrintOrder { get; set; }
 }
 
 public class ServiceDutyData

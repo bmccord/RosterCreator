@@ -1,788 +1,406 @@
 {
-    "duties": [
+  "duties": [
+    {
+      "name": "Announcements",
+      "importance": 2
+    },
+    {
+      "name": "Song Leading",
+      "importance": 1,
+      "weekly": true,
+      "rotation": true
+    },
+    {
+      "name": "Scripture Reading",
+      "importance": 4
+    },
+    {
+      "name": "Opening Prayer",
+      "importance": 3
+    },
+    {
+      "name": "Sermon",
+      "importance": 0
+    },
+    {
+      "name": "Communion Thoughts / Bread Prayer",
+      "importance": 2
+    },
+    {
+      "name": "Communion Cup Prayer / Offering Prayer",
+      "importance": 3
+    },
+    {
+      "name": "Communion Server 1",
+      "importance": 5
+    },
+    {
+      "name": "Communion Server 2",
+      "importance": 5
+    },
+    {
+      "name": "Closing Prayer",
+      "importance": 3
+    },
+    {
+      "name": "Usher",
+      "importance": 5
+    },
+    {
+      "name": "Communion Prayers",
+      "importance": 3
+    },
+    {
+      "name": "Invitation",
+      "importance": 0
+    }
+  ],
+  "templates": [
+    {
+      "name": "SundayMorning",
+      "duties": [
         {
-            "name": "Announcements",
-            "importance": 2
+          "name": "Announcements",
+          "printOrder": 1
         },
         {
-            "name": "Song Leading",
-            "importance": 1,
-            "weekly": true,
-            "rotation": true
+          "name": "Song Leading",
+          "printOrder": 2
         },
         {
-            "name": "Scripture Reading",
-            "importance": 4
+          "name": "Scripture Reading",
+          "printOrder": 3
         },
         {
-            "name": "Opening Prayer",
-            "importance": 3
+          "name": "Opening Prayer",
+          "printOrder": 4
         },
         {
-            "name": "Sermon",
-            "importance": 0
+          "name": "Sermon",
+          "printOrder": 5
         },
         {
-            "name": "Communion Thoughts / Bread Prayer",
-            "importance": 2
+          "name": "Communion Thoughts / Bread Prayer",
+          "printOrder": 6
         },
         {
-            "name": "Communion Cup Prayer / Offering Prayer",
-            "importance": 3
+          "name": "Communion Cup Prayer / Offering Prayer",
+          "printOrder": 7
         },
         {
-            "name": "Communion Server 1",
-            "importance": 5
+          "name": "Communion Server 1",
+          "printOrder": 8
         },
         {
-            "name": "Communion Server 2",
-            "importance": 5
+          "name": "Communion Server 2",
+          "printOrder": 9
         },
         {
-            "name": "Closing Prayer",
-            "importance": 3
+          "name": "Closing Prayer",
+          "printOrder": 10
         },
         {
-            "name": "Usher",
-            "importance": 5
-        },
-        {
-            "name": "Communion Prayers",
-            "importance": 3
-        },
-        {
-            "name": "Invitation",
-            "importance": 0
+          "name": "Usher",
+          "printOrder": 11
         }
-    ],
-    "services": [
+      ]
+    },
+    {
+      "name": "SundayEvening",
+      "duties": [
         {
-            "name": "Sunday Morning Worship",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Scripture Reading",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Sermon",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Communion Thoughts / Bread Prayer",
-                    "printOrder": 6
-                },
-                {
-                    "name": "Communion Cup Prayer / Offering Prayer",
-                    "printOrder": 7
-                },
-                {
-                    "name": "Communion Server 1",
-                    "printOrder": 8
-                },
-                {
-                    "name": "Communion Server 2",
-                    "printOrder": 9
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 10
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 11
-                }
-            ],
-            "serviceTime": "2025-03-02T09:00:00"
+          "name": "Announcements",
+          "printOrder": 1
         },
         {
-            "name": "Sunday Evening Worship",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Sermon",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Communion Prayers",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 6
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 7
-                }
-            ],
-            "serviceTime": "2025-03-02T17:00:00"
+          "name": "Song Leading",
+          "printOrder": 2
         },
         {
-            "name": "Wednesday Evening Bible Study",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Invitation",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 6
-                }
-            ],
-            "serviceTime": "2025-03-05T19:00:00"
+          "name": "Opening Prayer",
+          "printOrder": 3
         },
         {
-            "name": "Sunday Morning Worship",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Scripture Reading",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Sermon",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Communion Thoughts / Bread Prayer",
-                    "printOrder": 6
-                },
-                {
-                    "name": "Communion Cup Prayer / Offering Prayer",
-                    "printOrder": 7
-                },
-                {
-                    "name": "Communion Server 1",
-                    "printOrder": 8
-                },
-                {
-                    "name": "Communion Server 2",
-                    "printOrder": 9
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 10
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 11
-                }
-            ],
-            "serviceTime": "2025-03-09T09:00:00"
+          "name": "Sermon",
+          "printOrder": 4
         },
         {
-            "name": "Sunday Evening Worship",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Sermon",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Communion Prayers",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 6
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 7
-                }
-            ],
-            "serviceTime": "2025-03-09T17:00:00"
+          "name": "Communion Prayers",
+          "printOrder": 5
         },
         {
-            "name": "Wednesday Evening Bible Study",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Invitation",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 6
-                }
-            ],
-            "serviceTime": "2025-03-12T19:00:00"
+          "name": "Closing Prayer",
+          "printOrder": 6
         },
         {
-            "name": "Sunday Morning Worship",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Scripture Reading",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Sermon",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Communion Thoughts / Bread Prayer",
-                    "printOrder": 6
-                },
-                {
-                    "name": "Communion Cup Prayer / Offering Prayer",
-                    "printOrder": 7
-                },
-                {
-                    "name": "Communion Server 1",
-                    "printOrder": 8
-                },
-                {
-                    "name": "Communion Server 2",
-                    "printOrder": 9
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 10
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 11
-                }
-            ],
-            "serviceTime": "2025-03-16T09:00:00"
-        },
-        {
-            "name": "Sunday Evening Worship",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Sermon",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Communion Prayers",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 6
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 7
-                }
-            ],
-            "serviceTime": "2025-03-16T17:00:00"
-        },
-        {
-            "name": "Wednesday Evening Bible Study",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Invitation",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 6
-                }
-            ],
-            "serviceTime": "2025-03-19T19:00:00"
-        },
-        {
-            "name": "Sunday Morning Worship",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Scripture Reading",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Sermon",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Communion Thoughts / Bread Prayer",
-                    "printOrder": 6
-                },
-                {
-                    "name": "Communion Cup Prayer / Offering Prayer",
-                    "printOrder": 7
-                },
-                {
-                    "name": "Communion Server 1",
-                    "printOrder": 8
-                },
-                {
-                    "name": "Communion Server 2",
-                    "printOrder": 9
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 10
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 11
-                }
-            ],
-            "serviceTime": "2025-03-23T09:00:00"
-        },
-        {
-            "name": "Sunday Evening Worship",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Sermon",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Communion Prayers",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 6
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 7
-                }
-            ],
-            "serviceTime": "2025-03-23T17:00:00"
-        },
-        {
-            "name": "Wednesday Evening Bible Study",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Invitation",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 6
-                }
-            ],
-            "serviceTime": "2025-03-26T19:00:00"
-        },
-        {
-            "name": "Sunday Morning Worship",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Scripture Reading",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Sermon",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Communion Thoughts / Bread Prayer",
-                    "printOrder": 6
-                },
-                {
-                    "name": "Communion Cup Prayer / Offering Prayer",
-                    "printOrder": 7
-                },
-                {
-                    "name": "Communion Server 1",
-                    "printOrder": 8
-                },
-                {
-                    "name": "Communion Server 2",
-                    "printOrder": 9
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 10
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 11
-                }
-            ],
-            "serviceTime": "2025-03-30T09:00:00"
-        },
-        {
-            "name": "Sunday Evening Worship",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Sermon",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Communion Prayers",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 6
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 7
-                }
-            ],
-            "serviceTime": "2025-03-30T17:00:00"
-        },
-        {
-            "name": "Wednesday Evening Bible Study",
-            "duties": [
-                {
-                    "name": "Announcements",
-                    "printOrder": 1
-                },
-                {
-                    "name": "Song Leading",
-                    "printOrder": 2
-                },
-                {
-                    "name": "Opening Prayer",
-                    "printOrder": 3
-                },
-                {
-                    "name": "Invitation",
-                    "printOrder": 4
-                },
-                {
-                    "name": "Closing Prayer",
-                    "printOrder": 5
-                },
-                {
-                    "name": "Usher",
-                    "printOrder": 6
-                }
-            ],
-            "serviceTime": "2025-04-02T19:00:00"
+          "name": "Usher",
+          "printOrder": 7
         }
-    ],
-    "people": [
+      ]
+    },
+    {
+      "name": "WednesdayEvening",
+      "duties": [
         {
-            "name": "John Doe",
-            "duties": [
-                "Song Leading",
-                "Opening Prayer",
-                "Usher",
-                "Communion Thoughts / Bread Prayer",
-                "Communion Cup Prayer / Offering Prayer",
-                "Closing Prayer",
-                "Communion Server 1",
-                "Communion Server 2",
-                "Announcements",
-                "Scripture Reading",
-                "Communion Prayers"
-            ]
+          "name": "Announcements",
+          "printOrder": 1
         },
         {
-            "name": "Jim Parsons",
-            "duties": [
-                "Song Leading",
-                "Opening Prayer",
-                "Usher",
-                "Communion Thoughts / Bread Prayer",
-                "Communion Cup Prayer / Offering Prayer",
-                "Closing Prayer",
-                "Communion Server 1",
-                "Communion Server 2",
-                "Announcements",
-                "Scripture Reading",
-                "Sermon",
-                "Invitation",
-                "Communion Prayers"
-            ]
+          "name": "Song Leading",
+          "printOrder": 2
         },
         {
-            "name": "Kevin Costner",
-            "duties": [
-                "Opening Prayer",
-                "Usher",
-                "Communion Thoughts / Bread Prayer",
-                "Communion Cup Prayer / Offering Prayer",
-                "Closing Prayer",
-                "Communion Server 1",
-                "Communion Server 2",
-                "Announcements",
-                "Scripture Reading",
-                "Communion Prayers"
-            ]
+          "name": "Opening Prayer",
+          "printOrder": 3
         },
         {
-            "name": "Greg Gutfeld",
-            "duties": [
-                "Opening Prayer",
-                "Usher",
-                "Communion Thoughts / Bread Prayer",
-                "Communion Cup Prayer / Offering Prayer",
-                "Closing Prayer",
-                "Communion Server 1",
-                "Communion Server 2",
-                "Scripture Reading",
-                "Communion Prayers"
-            ]
+          "name": "Invitation",
+          "printOrder": 4
         },
         {
-            "name": "Garth Brooks",
-            "duties": [
-                "Scripture Reading",
-                "Communion Server 1",
-                "Communion Server 2",
-                "Closing Prayer",
-                "Usher"
-            ]
+          "name": "Closing Prayer",
+          "printOrder": 5
         },
         {
-            "name": "Patrick Stewarts",
-            "duties": [
-                "Opening Prayer",
-                "Usher",
-                "Communion Thoughts / Bread Prayer",
-                "Communion Cup Prayer / Offering Prayer",
-                "Closing Prayer",
-                "Communion Server 1",
-                "Communion Server 2",
-                "Announcements",
-                "Scripture Reading",
-                "Communion Prayers"
-            ]
-        },
-        {
-            "name": "Ryan Reynolds",
-            "duties": [
-                "Song Leading",
-                "Scripture Reading",
-                "Communion Server 1",
-                "Communion Server 2"
-            ]
-        },
-        {
-            "name": "Burt Reynolds",
-            "duties": [
-                "Communion Server 1",
-                "Communion Server 2"
-            ]
-        },
-        {
-            "name": "Peter Dinklage",
-            "duties": [
-                "Song Leading",
-                "Opening Prayer",
-                "Usher",
-                "Communion Thoughts / Bread Prayer",
-                "Communion Cup Prayer / Offering Prayer",
-                "Closing Prayer",
-                "Communion Server 1",
-                "Communion Server 2",
-                "Announcements",
-                "Scripture Reading",
-                "Communion Prayers"
-            ]
-        },
-        {
-            "name": "Darrel Dixon",
-            "duties": [
-                "Scripture Reading",
-                "Communion Server 1",
-                "Communion Server 2",
-                "Usher"
-            ],
-            "wednesdayPM": false
-        },
-        {
-            "name": "Santa Claus",
-            "duties": [
-                "Communion Server 1",
-                "Communion Server 2",
-                "Closing Prayer"
-            ],
-            "sundayPM": false,
-            "wednesdayPM": false
-        },
-        {
-            "name": "Jessie Watters",
-            "duties": [
-                "Opening Prayer",
-                "Communion Thoughts / Bread Prayer",
-                "Communion Cup Prayer / Offering Prayer",
-                "Closing Prayer",
-                "Communion Server 1",
-                "Communion Server 2",
-                "Announcements",
-                "Scripture Reading",
-                "Communion Prayers"
-            ],
-            "sundayPM": false,
-            "wednesdayPM": false
+          "name": "Usher",
+          "printOrder": 6
         }
-    ]
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Sunday Morning Worship",
+      "template": "SundayMorning",
+      "serviceTime": "2025-03-02T09:00:00"
+    },
+    {
+      "name": "Sunday Evening Worship",
+      "template": "SundayEvening",
+      "serviceTime": "2025-03-02T17:00:00"
+    },
+    {
+      "name": "Wednesday Evening Bible Study",
+      "template": "WednesdayEvening",
+      "serviceTime": "2025-03-05T19:00:00"
+    },
+    {
+      "name": "Sunday Morning Worship",
+      "template": "SundayMorning",
+      "serviceTime": "2025-03-09T09:00:00"
+    },
+    {
+      "name": "Sunday Evening Worship",
+      "template": "SundayEvening",
+      "serviceTime": "2025-03-09T17:00:00"
+    },
+    {
+      "name": "Wednesday Evening Bible Study",
+      "template": "WednesdayEvening",
+      "serviceTime": "2025-03-12T19:00:00"
+    },
+    {
+      "name": "Sunday Morning Worship",
+      "template": "SundayMorning",
+      "serviceTime": "2025-03-16T09:00:00"
+    },
+    {
+      "name": "Sunday Evening Worship",
+      "template": "SundayEvening",
+      "serviceTime": "2025-03-16T17:00:00"
+    },
+    {
+      "name": "Wednesday Evening Bible Study",
+      "template": "WednesdayEvening",
+      "serviceTime": "2025-03-19T19:00:00"
+    },
+    {
+      "name": "Sunday Morning Worship",
+      "template": "SundayMorning",
+      "serviceTime": "2025-03-23T09:00:00"
+    },
+    {
+      "name": "Sunday Evening Worship",
+      "template": "SundayEvening",
+      "serviceTime": "2025-03-23T17:00:00"
+    },
+    {
+      "name": "Wednesday Evening Bible Study",
+      "template": "WednesdayEvening",
+      "serviceTime": "2025-03-26T19:00:00"
+    },
+    {
+      "name": "Sunday Morning Worship",
+      "template": "SundayMorning",
+      "serviceTime": "2025-03-30T09:00:00"
+    },
+    {
+      "name": "Sunday Evening Worship",
+      "template": "SundayEvening",
+      "serviceTime": "2025-03-30T17:00:00"
+    },
+    {
+      "name": "Wednesday Evening Bible Study",
+      "template": "WednesdayEvening",
+      "serviceTime": "2025-04-02T19:00:00"
+    }
+  ],
+  "people": [
+    {
+      "name": "John Doe",
+      "duties": [
+        "Song Leading",
+        "Opening Prayer",
+        "Usher",
+        "Communion Thoughts / Bread Prayer",
+        "Communion Cup Prayer / Offering Prayer",
+        "Closing Prayer",
+        "Communion Server 1",
+        "Communion Server 2",
+        "Announcements",
+        "Scripture Reading",
+        "Communion Prayers"
+      ]
+    },
+    {
+      "name": "Jim Parsons",
+      "duties": [
+        "Song Leading",
+        "Opening Prayer",
+        "Usher",
+        "Communion Thoughts / Bread Prayer",
+        "Communion Cup Prayer / Offering Prayer",
+        "Closing Prayer",
+        "Communion Server 1",
+        "Communion Server 2",
+        "Announcements",
+        "Scripture Reading",
+        "Sermon",
+        "Invitation",
+        "Communion Prayers"
+      ]
+    },
+    {
+      "name": "Kevin Costner",
+      "duties": [
+        "Opening Prayer",
+        "Usher",
+        "Communion Thoughts / Bread Prayer",
+        "Communion Cup Prayer / Offering Prayer",
+        "Closing Prayer",
+        "Communion Server 1",
+        "Communion Server 2",
+        "Announcements",
+        "Scripture Reading",
+        "Communion Prayers"
+      ]
+    },
+    {
+      "name": "Greg Gutfeld",
+      "duties": [
+        "Opening Prayer",
+        "Usher",
+        "Communion Thoughts / Bread Prayer",
+        "Communion Cup Prayer / Offering Prayer",
+        "Closing Prayer",
+        "Communion Server 1",
+        "Communion Server 2",
+        "Scripture Reading",
+        "Communion Prayers"
+      ]
+    },
+    {
+      "name": "Garth Brooks",
+      "duties": [
+        "Scripture Reading",
+        "Communion Server 1",
+        "Communion Server 2",
+        "Closing Prayer",
+        "Usher"
+      ]
+    },
+    {
+      "name": "Patrick Stewarts",
+      "duties": [
+        "Opening Prayer",
+        "Usher",
+        "Communion Thoughts / Bread Prayer",
+        "Communion Cup Prayer / Offering Prayer",
+        "Closing Prayer",
+        "Communion Server 1",
+        "Communion Server 2",
+        "Announcements",
+        "Scripture Reading",
+        "Communion Prayers"
+      ]
+    },
+    {
+      "name": "Ryan Reynolds",
+      "duties": [
+        "Song Leading",
+        "Scripture Reading",
+        "Communion Server 1",
+        "Communion Server 2"
+      ]
+    },
+    {
+      "name": "Burt Reynolds",
+      "duties": [
+        "Communion Server 1",
+        "Communion Server 2"
+      ]
+    },
+    {
+      "name": "Peter Dinklage",
+      "duties": [
+        "Song Leading",
+        "Opening Prayer",
+        "Usher",
+        "Communion Thoughts / Bread Prayer",
+        "Communion Cup Prayer / Offering Prayer",
+        "Closing Prayer",
+        "Communion Server 1",
+        "Communion Server 2",
+        "Announcements",
+        "Scripture Reading",
+        "Communion Prayers"
+      ]
+    },
+    {
+      "name": "Darrel Dixon",
+      "duties": [
+        "Scripture Reading",
+        "Communion Server 1",
+        "Communion Server 2",
+        "Usher"
+      ],
+      "wednesdayPM": false
+    },
+    {
+      "name": "Santa Claus",
+      "duties": [
+        "Communion Server 1",
+        "Communion Server 2",
+        "Closing Prayer"
+      ],
+      "sundayPM": false,
+      "wednesdayPM": false
+    },
+    {
+      "name": "Jessie Watters",
+      "duties": [
+        "Opening Prayer",
+        "Communion Thoughts / Bread Prayer",
+        "Communion Cup Prayer / Offering Prayer",
+        "Closing Prayer",
+        "Communion Server 1",
+        "Communion Server 2",
+        "Announcements",
+        "Scripture Reading",
+        "Communion Prayers"
+      ],
+      "sundayPM": false,
+      "wednesdayPM": false
+    }
+  ]
 }
